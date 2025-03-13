@@ -46,40 +46,6 @@ const Navbar = () => {
             );
           })}
           {/* Menu Icon */}
-          <Sheet>
-            <SheetTrigger>
-              <Menu className="text-white cursor-pointer hidden max-[576px]:block max-[400px]:block" />
-            </SheetTrigger>
-            <SheetContent className="bg-[#080808]">
-              <SheetHeader>
-                <SheetTitle>
-                  {navLinks.map((link) => {
-                    const isActive =
-                      pathname === link.route || pathname === `${link.route}/`;
-                    return (
-                      <div
-                        key={link.id}
-                        className="flex flex-col gap-2 justify-center items-center pt-20"
-                      >
-                        <Link
-                          key={link.id}
-                          href={link.route}
-                          className={cn(
-                            "text-gray-50 mx-4 hover:text-blue-400 hover:transition-all hover:duration-300 hover:ease-in-out",
-                            {
-                              "text-blue-500": isActive,
-                            }
-                          )}
-                        >
-                          {link.title}
-                        </Link>
-                      </div>
-                    );
-                  })}
-                </SheetTitle>
-              </SheetHeader>
-            </SheetContent>
-          </Sheet>
         </div>
       </nav>
     </header>
